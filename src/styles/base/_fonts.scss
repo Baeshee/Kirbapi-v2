@@ -5,6 +5,7 @@
   --heading-4: 2rem;
   --normal: 1.8rem;
   --medium: 1.6rem;
+  --semi-small: 1.4rem;
   --small: 1.2rem;
   --x-small: 0.8rem;
 
@@ -15,30 +16,53 @@
   --weight-italic: 400;
 }
 
+// Inter
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/Inter-Regular.ttf");
+  src: url("/fonts/Inter/Inter-Regular.ttf");
 }
 
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/Inter-Medium.ttf");
+  src: url("/fonts/Inter/Inter-Medium.ttf");
 }
 
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/Inter-Bold.ttf");
+  src: url("/fonts/Inter/Inter-Bold.ttf");
 }
 
 @font-face {
   font-family: "Inter-Light";
   font-style: normal;
   font-weight: 300;
-  src: url("/fonts/Inter-Light.ttf");
+  src: url("/fonts/Inter/Inter-Light.ttf");
+}
+
+// Orbitron
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Orbitron/Orbitron-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Orbitron/Orbitron-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Orbitron/Orbitron-Bold.ttf");
 }

@@ -1,0 +1,21 @@
+@import "../../../../styles/global.scss";
+
+.close {
+  @include flex-centered;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
