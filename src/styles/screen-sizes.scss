@@ -1,0 +1,20 @@
+$base-size: 800px;
+
+@mixin phone {
+  @media (max-width: #{$base-size - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $base-size) and (max-width: #{$base-size + 400px}) {
+    @content;
+  }
+}
+
+// Desktop screen size
+@mixin desktop {
+  @media (min-width: $base-size) {
+    @content;
+  }
+}

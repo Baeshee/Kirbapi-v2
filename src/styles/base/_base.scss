@@ -1,0 +1,21 @@
+@import "../global.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: var(--normal);
+  color: var(--text-light);
+  font-family: "Inter", sans-serif;
+  font-weight: var(--weight-regular);
+  font-style: normal;
+}
