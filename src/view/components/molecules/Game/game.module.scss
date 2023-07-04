@@ -1,0 +1,41 @@
+@import "../../../../styles/global.scss";
+
+.game {
+  @include flex-column;
+
+  width: 100%;
+  height: 20rem;
+  justify-content: space-evenly;
+
+  p {
+    font-size: var(--normal);
+    color: #000;
+    font-weight: var(--weight-medium);
+  }
+
+  & > img {
+    width: auto;
+    height: 8rem;
+    object-fit: cover;
+    align-self: center;
+  }
+
+  &__body {
+    @include flex-column;
+
+    justify-content: start;
+    align-items: space-evenly;
+
+    .name {
+      font-size: var(--semi-small);
+      color: #000;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: var(--small);
+      color: lighten(#000, 20%);
+    }
+  }
+}

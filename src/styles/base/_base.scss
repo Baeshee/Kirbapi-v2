@@ -19,3 +19,39 @@ body {
   font-weight: var(--weight-regular);
   font-style: normal;
 }
+
+:root {
+  --breakpoint: "phone";
+  @include desktop {
+    --breakpoint: "desktop";
+  }
+  @include tablet {
+    --breakpoint: "tablet";
+  }
+  @include phone {
+    --breakpoint: "phone";
+  }
+}
+
+@include desktop {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #323232;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+    border-radius: 0.5rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
