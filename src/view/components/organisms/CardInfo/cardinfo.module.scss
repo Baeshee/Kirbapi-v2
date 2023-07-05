@@ -42,7 +42,8 @@
 .imageContainer {
   @include flex-centered;
 
-  height: 40%;
+  min-height: 35rem;
+  height: 35rem;
   width: 100%;
 
   & > img {
@@ -59,18 +60,6 @@
   @include flex-row;
   gap: 3rem;
 }
-
-.type {
-  @include flex-centered;
-
-  background-color: lightcoral;
-  color: #fff;
-  padding: 1rem;
-  width: fit-content;
-  border-radius: 0.5rem;
-  align-self: center;
-}
-
 .contentHeaders {
   @include flex-row;
 
@@ -115,4 +104,71 @@
 .value {
   font-weight: var(--weight-light);
   font-size: var(--medium);
+}
+
+.contentWrap {
+  @include flex-column;
+  gap: 2rem;
+}
+
+.typeWrapper {
+  @include flex-row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.typeBase {
+  @include flex-centered;
+
+  color: #fff;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+  align-self: center;
+}
+
+.red {
+  background-color: #f44336;
+}
+
+.yellow {
+  background-color: #ff9800;
+}
+
+.green {
+  background-color: #4caf50;
+}
+
+.blue {
+  background-color: #2196f3;
+}
+
+.blueLight {
+  background-color: #5fc5f5;
+}
+
+.purple {
+  background-color: #9c27b0;
+}
+
+.purpleLight {
+  background-color: #ab47bc;
+}
+
+.orange {
+  background-color: #ff5722;
+}
+
+.pink {
+  background-color: #e91e63;
+}
+
+.grey {
+  background-color: #9e9e9e;
+}
+
+.aqua {
+  background-color: #00bcd4;
 }
