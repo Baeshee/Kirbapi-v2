@@ -6,7 +6,7 @@ import Game from "../../molecules/Game/Game";
 import { useBreakpoint } from "../../../../core/services/hooks";
 
 interface Props {
-  ability: Record<string, string> | null;
+  ability: Record<string, any> | null;
   setIndex: (index: number | null) => void;
   games: Record<string, string>[];
 }
@@ -42,7 +42,25 @@ const CardInfo: React.FC<Props> = ({ ability, setIndex, games }) => {
       case 1:
         infoContent = (
           <section className={$.infoContent}>
-            <p>{ability.kirby_appearance}</p>
+            {typeof ability.kirby_appearance === "object" ? (
+              ability.kirby_appearance.map(
+                (appearance: string, index: number) => (
+                  <div className={$.contentWrap}>
+                    <p className={$.label}>
+                      {appearance.slice(0, appearance.indexOf(":"))}
+                    </p>
+                    <p key={index} className={$.value}>
+                      {appearance.slice(
+                        appearance.indexOf(":") + 2,
+                        appearance.length
+                      )}
+                    </p>
+                  </div>
+                )
+              )
+            ) : (
+              <p className={$.value}>{ability.kirby_appearance}</p>
+            )}
           </section>
         );
         break;
@@ -84,7 +102,36 @@ const CardInfo: React.FC<Props> = ({ ability, setIndex, games }) => {
       </figure>
       <section className={$.cardInfo__body}>
         <h2>{ability.name}</h2>
-        <p className={$.type}>{ability.type}</p>
+        <section className={$.typeWrapper}>
+          {ability.type.split(", ").map((type: string, index: number) => (
+            <p
+              key={index}
+              className={cx(
+                $.typeBase,
+                type.toLowerCase().includes("melee") ? $.blue : null,
+                type.toLowerCase().includes("elemental") ? $.yellow : null,
+                type.toLowerCase().includes("transformational") ? $.pink : null,
+                type.toLowerCase().includes("weapon") ? $.blueLight : null,
+                type.toLowerCase().includes("physical") ? $.purple : null,
+                type.toLowerCase().includes("psychic") ? $.purpleLight : null,
+                type.toLowerCase().includes("energy") ? $.red : null,
+                type.toLowerCase().includes("none") ||
+                  type.toLocaleLowerCase().includes("activates")
+                  ? $.grey
+                  : null,
+                type.toLowerCase().includes("one-use") ||
+                  type.toLowerCase().includes("1-use") ||
+                  type.toLowerCase().includes("3-use")
+                  ? $.pink
+                  : null,
+                type.toLowerCase().includes("magical") ? $.pink : null,
+                type.toLowerCase().includes("projectile") ? $.aqua : null
+              )}
+            >
+              {type}
+            </p>
+          ))}
+        </section>
         <section className={$.contentHeaders}>
           <p
             className={cx(content === 0 ? $.headerActive : $.header)}
