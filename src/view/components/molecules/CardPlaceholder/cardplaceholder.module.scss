@@ -1,0 +1,15 @@
+@import "../../../../styles/global.scss";
+
+.wrapper {
+  width: 25%;
+  height: 100%;
+}
+
+.placeholder {
+  width: 24%;
+  height: 75vh;
+  border-radius: 2rem 2rem 0 0;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff15;
+}

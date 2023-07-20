@@ -1,0 +1,17 @@
+@import "../../../../styles/global.scss";
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 2rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop {
+    width: 75%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

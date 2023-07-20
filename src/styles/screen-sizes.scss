@@ -1,4 +1,4 @@
-$base-size: 800px;
+$base-size: 768px;
 
 @mixin phone {
   @media (max-width: #{$base-size - 1px}) {
@@ -14,7 +14,7 @@ $base-size: 800px;
 
 // Desktop screen size
 @mixin desktop {
-  @media (min-width: $base-size) {
+  @media (min-width: #{$base-size + 401px}) {
     @content;
   }
 }
